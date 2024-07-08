@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/dyn-boid",
+  "version": "0.1.0",
+  "title": "Dyn Boid",
+  "category": "widgets",
+  "icon": "pets",
+  "description": "An interactive block with the Interactivity API",
+  "example": {},
+  "supports": {
+    "interactivity": true
+  },
+  "attributes": {
+    "viewHeight": {
+      "type": "integer",
+      "default": 400
+    },
+    "viewWidth": {
+      "type": "integer",
+      "default": 400
+    },
+    "boidCount": {
+      "type": "integer",
+      "default": 100
+    },
+    "countRange": {
+      "type": "object",
+      "default": {
+        "min": 20,
+        "max": 100
+      }
+    },
+    "boidLookRange": {
+      "type": "integer",
+      "default": 75
+    },
+    "lookRange": {
+      "type": "object",
+      "default": {
+        "min": 5,
+        "max": 100
+      }
+    },
+    "centeringRange": {
+      "type": "object",
+      "default": {
+        "min": 0.001,
+        "max": 0.01
+      }
+    },
+    "avoidRange": {
+      "type": "object",
+      "default": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "coherenceRange": {
+      "type": "object",
+      "default": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "boidTrails": {
+      "type": "boolean",
+      "default": false
+    },
+    "boidColor": {
+      "type": "string",
+      "default": "#558cf4"
+    },
+    "trailColor": {
+      "type": "string",
+      "default": "#558cf466"
+    }
+  },
+  "textdomain": "dyn-boid",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js"
+}
