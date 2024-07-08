@@ -32,6 +32,19 @@ import { PanelBody, RangeControl, SelectControl } from "@wordpress/components";
 export default function Edit({ attributes, setAttributes }) {
   const blockProps = useBlockProps();
 
+  const colorSettings = [
+    {
+      label: __("boid color", "dyn-boid"),
+      value: attributes.boidColor,
+      onChange: (v) => setAttributes({ boidColor: v }),
+    },
+    {
+      label: __("trail color", "dyn-boid"),
+      value: attributes.trailColor,
+      onChange: (v) => setAttributes({ trailColor: v }),
+    },
+  ];
+
   return (
     <>
       <InspectorControls>
@@ -51,9 +64,9 @@ export default function Edit({ attributes, setAttributes }) {
             max={1000}
           />
         </PanelBody>
-        <PanelBody title={__("Simulation Settings", "boids")}>
+        <PanelBody title={__("Simulation Settings", "dyn-boid")}>
           <RangeControl
-            label={__("look ahead range", "boids")}
+            label={__("look ahead range", "dyn-boid")}
             value={attributes.boidLookRange}
             onChange={(val) => setAttributes({ boidLookRange: Number(val) })}
             min={attributes.lookRange.min}
@@ -61,7 +74,7 @@ export default function Edit({ attributes, setAttributes }) {
           />
 
           <RangeControl
-            label={__("number of boids", "boids")}
+            label={__("number of boids", "dyn-boid")}
             value={attributes.boidCount}
             onChange={(val) => setAttributes({ boidCount: Number(val) })}
             min={attributes.countRange.min}
@@ -69,7 +82,7 @@ export default function Edit({ attributes, setAttributes }) {
           />
 
           <SelectControl
-            label={__("flight trails", "boids")}
+            label={__("flight trails", "dyn-boid")}
             value={attributes.boidTrails}
             onChange={(val) => setAttributes({ boidTrails: val })}
             options={[
@@ -78,6 +91,11 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
           />
         </PanelBody>
+        <PanelColorSettings
+          title={__("Color settings", "dyn-boid")}
+          initialOpen={false}
+          colorSettings={colorSettings}
+        ></PanelColorSettings>
       </InspectorControls>
 
       <canvas
