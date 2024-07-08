@@ -80,9 +80,11 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
 
-      <p {...blockProps}>
-        {__("Dyn Boid – hello from the editor!", "dyn-boid")}
-      </p>
+      <canvas
+        {...blockProps}
+        height={attributes.viewHeight}
+        width={attributes.viewWidth}
+      ></canvas>
     </>
   );
 }
