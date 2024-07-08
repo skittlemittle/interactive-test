@@ -24,46 +24,63 @@ $canvas_id = wp_unique_id('boid-canvas-');
 		'boidLookRange' => $attributes['boidLookRange'],
 		'viewHeight' => $attributes['viewHeight'],
 		'viewWidth' => $attributes['viewWidth'],
+		'boidColor' => $attributes['boidColor'],
+		'trailColor' => $attributes['trailColor'],
 		'canvasId' => $canvas_id
 		) ); ?>
 	data-wp-watch=""
 	data-wp-init="actions.startSim"
 >
 	<div class="simulation-controls">
-		<input
-			data-wp-on--change="actions.updateLookRange"
-			type="range"
-			min="<?php echo $attributes['lookRange']['min']?>"
-			max="<?php echo $attributes['lookRange']['max']?>"
-			step="1"
-		/>
-		<input
-			data-wp-on--change="actions.updateCenteringFactor"
-			type="range"
-			min="<?php echo $attributes['centeringRange']['min']?>"
-			max="<?php echo $attributes['centeringRange']['max']?>"
-			step="0.001"
-		/>
-		<input
-			data-wp-on--change="actions.updateAvoidFactor"
-			type="range"
-			min="<?php echo $attributes['avoidRange']['min']?>"
-			max="<?php echo $attributes['avoidRange']['max']?>"
-			step="0.05"
-		/>
-		<input
-			data-wp-on--change="actions.updateCoherenceFactor"
-			type="range"
-			min="<?php echo $attributes['coherenceRange']['min']?>"
-			max="<?php echo $attributes['coherenceRange']['max']?>"
-			step="0.05"
-		/>
-		<button
-			data-wp-on--click="actions.toggleTrails"
-			aria-controls="<?php echo esc_attr( $unique_id ); ?>"
-		>
-			<?php esc_html_e( 'Toggle Trails', 'dyn-boid' ); ?>
-		</button>
+		<div class="control-container">
+			<p>Vision Range:</p>
+			<input
+				data-wp-on--change="actions.updateLookRange"
+				type="range"
+				min="<?php echo $attributes['lookRange']['min']?>"
+				max="<?php echo $attributes['lookRange']['max']?>"
+				step="1"
+			/>
+		</div>
+		<div class="control-container">
+			<p>Centering: </p>
+			<input
+				data-wp-on--change="actions.updateCenteringFactor"
+				type="range"
+				min="<?php echo $attributes['centeringRange']['min']?>"
+				max="<?php echo $attributes['centeringRange']['max']?>"
+				step="0.001"
+			/>
+		</div>
+		<div class="control-container">
+			<p>Avoidance: </p>
+			<input
+				data-wp-on--change="actions.updateAvoidFactor"
+				type="range"
+				min="<?php echo $attributes['avoidRange']['min']?>"
+				max="<?php echo $attributes['avoidRange']['max']?>"
+				step="0.05"
+			/>
+		</div>
+		<div class="control-container">
+			<p>Coherence: </p>
+			<input
+				data-wp-on--change="actions.updateCoherenceFactor"
+				type="range"
+				min="<?php echo $attributes['coherenceRange']['min']?>"
+				max="<?php echo $attributes['coherenceRange']['max']?>"
+				step="0.05"
+			/>
+		</div>
+		<div class="control-container">
+			<button
+				class="toggle-button"
+				data-wp-on--click="actions.toggleTrails"
+				aria-controls="<?php echo esc_attr( $unique_id ); ?>"
+			>
+				<?php esc_html_e( 'Toggle Trails', 'dyn-boid' ); ?>
+			</button>
+		</div>
 	
 	</div>
 

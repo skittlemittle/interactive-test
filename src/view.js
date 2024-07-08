@@ -39,8 +39,8 @@ store("create-block", {
         context.viewWidth,
         context.boidCount,
         context.boidLookRange,
-        "#ff0000",
-        "#00ff00",
+        context.boidColor,
+        context.trailColor,
         context.boidTrails
       );
       initBoids();
