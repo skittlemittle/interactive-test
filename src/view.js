@@ -39,6 +39,7 @@ store("create-block", {
         context.viewWidth,
         context.boidCount,
         context.boidLookRange,
+        context.edgeBounce,
         context.boidColor,
         context.trailColor,
         context.boidTrails

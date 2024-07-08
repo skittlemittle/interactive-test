@@ -15,6 +15,7 @@ const Simulation = (
   width,
   numBoids,
   lookRange,
+  turnFactor,
   boidColor,
   trailColor,
   showTrail
@@ -55,7 +56,6 @@ const Simulation = (
   // nudge it back in and reverse its direction.
   function keepWithinBounds(boid) {
     const margin = 200;
-    const turnFactor = 1;
 
     if (boid.x < margin) {
       boid.dx += turnFactor;

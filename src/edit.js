@@ -74,6 +74,15 @@ export default function Edit({ attributes, setAttributes }) {
           />
 
           <RangeControl
+            label={__("edge avoidance", "dyn-boid")}
+            value={attributes.edgeBounce}
+            onChange={(val) => setAttributes({ edgeBounce: Number(val) })}
+            min={attributes.edgeBounceRange.min}
+            max={attributes.edgeBounceRange.max}
+            step={0.1}
+          />
+
+          <RangeControl
             label={__("number of boids", "dyn-boid")}
             value={attributes.boidCount}
             onChange={(val) => setAttributes({ boidCount: Number(val) })}

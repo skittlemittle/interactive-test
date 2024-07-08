@@ -22,6 +22,7 @@ $canvas_id = wp_unique_id('boid-canvas-');
 		'boidTrails' => $attributes['boidTrails'] ,
 		'boidCount' => $attributes['boidCount'],
 		'boidLookRange' => $attributes['boidLookRange'],
+		'edgeBounce' => $attributes['edgeBounce'],
 		'viewHeight' => $attributes['viewHeight'],
 		'viewWidth' => $attributes['viewWidth'],
 		'boidColor' => $attributes['boidColor'],

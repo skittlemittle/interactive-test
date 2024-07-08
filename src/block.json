@@ -64,6 +64,17 @@
         "max": 1
       }
     },
+    "edgeBounce": {
+      "type": "number",
+      "default": 1
+    },
+    "edgeBounceRange": {
+      "type": "object",
+      "default": {
+        "min": 0.5,
+        "max": 2
+      }
+    },
     "boidTrails": {
       "type": "boolean",
       "default": false
